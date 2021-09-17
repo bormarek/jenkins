@@ -2,7 +2,7 @@ String test = "Marek Borkowski";
 String test1 = "Traveler";
 
 pipeline {
-    agent { any }
+    agent { label 'agent1'  }
     stages {
         stage('build') {
             steps {
