@@ -1,5 +1,6 @@
 String test = "Marek";
 String test1 = "Borkowski";
+String test2 = "Develop"
 
 pipeline {
     agent { label 'agent1'  }
@@ -16,7 +17,7 @@ pipeline {
         }
         stage('develop') {
             steps {
-                echo "develop"
+                echo test2
             }
         }
     }
