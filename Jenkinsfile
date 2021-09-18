@@ -4,21 +4,15 @@ String test2 = "Develop"
 
 pipeline {
     agent { label 'agent1'  }
-    stages {
-        stage('build') {
-            steps {
-                echo test
-            }
+    for (int i=0;i<10;i++) {
+        stage "Stage #"+i
+        print "hello world"
+        if (i==0) 
+        {
+            echo "test"
         }
-	    stage('test') {
-	        steps {
-                echo test1
-	        }
-        }
-        stage('develop') {
-            steps {
-                echo test2
-            }
+        else {
+            echo "test1"
         }
     }
 }
