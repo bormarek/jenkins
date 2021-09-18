@@ -1,5 +1,5 @@
-String test = "Marek Borkowski";
-String test1 = "Traveler";
+String test = "Marek";
+String test1 = "Borkowski";
 
 pipeline {
     agent { label 'agent1'  }
