@@ -1,26 +1,12 @@
-String test = "Marek";
-String test1 = "Borkowski";
-String test2 = "Develop"
-
 pipeline {
-    agent { label 'agent1'  }
+    agent {
+        docker { image 'node:14-alpine' }
+    }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                echo test
-            }
-        }
-	    stage('test') {
-	        steps {
-                echo test1
-	        }
-        }
-        stage('develop') {
-            steps {
-                echo test2
+                sh 'node --version'
             }
         }
     }
 }
-
-
