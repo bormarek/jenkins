@@ -16,11 +16,6 @@ pipeline {
                 echo 'Hello World third time'
             }
         }
-        stage('Test'){
-            steps {
-                sh ('wsl -l -v')
-            }
-        }
         stage('Build'){
             steps {
                  writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
