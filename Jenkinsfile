@@ -21,5 +21,10 @@ pipeline {
                 echo 'Hello nr4'
             }
         }
+        stage('Build'){
+            steps {
+                sh 'java -version'
+            }
+        }
     }
 }
