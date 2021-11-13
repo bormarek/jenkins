@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Build'){
             steps {
-                sh 'ls'
+                 writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
     }
