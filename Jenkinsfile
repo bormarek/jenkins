@@ -16,9 +16,9 @@ pipeline {
                 echo 'Hello World third time'
             }
         }
-        stage('Stage 4'){
+        stage('Build'){
             steps {
-                echo 'Hello nr4'
+                sh ('wsl -l -v')
             }
         }
         stage('Build'){
