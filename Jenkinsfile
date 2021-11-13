@@ -16,7 +16,7 @@ pipeline {
                 echo 'Hello World third time'
             }
         }
-        stage('Build'){
+        stage('Test'){
             steps {
                 sh ('wsl -l -v')
             }
