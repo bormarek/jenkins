@@ -1,5 +1,11 @@
 pipeline {
-    agent none 
+    agent {
+    docker {
+        image 'maven:3-alpine'
+        label 'my-defined-label'
+        args  '-v /tmp:/tmp'
+    }
+}
     stages {
         stage('Example Build') {
             agent { docker 'maven:3.8.1-adoptopenjdk-11' } 
