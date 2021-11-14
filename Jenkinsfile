@@ -1,20 +1,24 @@
 pipeline {
-    agent {label 'agent1'}
+    agent {label 'agent1'} 
     stages {
-        stage('Back-end') {
-            agent {
-                docker { image 'maven:3.8.1-adoptopenjdk-11' }
-            }
+        stage('Stage 1') {
             steps {
-                sh 'mvn --version'
+                echo 'Hello world!' 
             }
         }
-        stage('Front-end') {
-            agent {
-                docker { image 'node:14-alpine' }
-            }
+        stage('Stage 2'){
             steps {
-                sh 'node --version'
+                echo 'Hello World Again'
+            }
+        }
+        stage('Stage 3'){
+            steps {
+                echo 'Hello World third time'
+            }
+        }
+        stage('Build'){
+            steps {
+                 writeFile file: "output/usefulfile.txt", text: "This file is useful, need to archive it."
             }
         }
     }
