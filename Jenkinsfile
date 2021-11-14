@@ -1,24 +1,20 @@
 pipeline {
-    agent {
-    docker {
-        image 'maven:3-alpine'
-        label 'my-defined-label'
-        args  '-v /tmp:/tmp'
-    }
-}
+    agent {label 'agent1'}
     stages {
-        stage('Example Build') {
-            agent { docker 'maven:3.8.1-adoptopenjdk-11' } 
+        stage('Back-end') {
+            agent {
+                docker { image 'maven:3.8.1-adoptopenjdk-11' }
+            }
             steps {
-                echo 'Hello, Maven'
                 sh 'mvn --version'
             }
         }
-        stage('Example Test') {
-            agent { docker 'openjdk:8-jre' } 
+        stage('Front-end') {
+            agent {
+                docker { image 'node:14-alpine' }
+            }
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
+                sh 'node --version'
             }
         }
     }
