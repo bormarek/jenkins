@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Prepare'){
             echo "get repo"
-            git clone https://github.com/bormarek/java.git
+            sh "git clone https://github.com/bormarek/java.git"
         }
         stage('Build'){
             steps {
