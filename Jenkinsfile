@@ -4,7 +4,7 @@ pipeline {
         stage('Build'){
             steps {
                 echo "building"
-                git clone https://github.com/bormarek/java.git
+                git 'https://github.com/bormarek/java.git'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
                 sh 'javac HelloWorld.java'
             }
