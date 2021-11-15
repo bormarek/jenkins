@@ -5,9 +5,10 @@ pipeline {
             steps {
                 echo 'Hello world!' 
             }
+            steps {
+                echo 'Test'
+            }
         }
-        stage('Stage 2'){
-            steps 'Hello World Again'
-        }
+
     }
 }
