@@ -2,8 +2,11 @@ pipeline {
     agent any
     stages {
         stage('Prepare'){
-            echo "get repo"
-            sh "git clone https://github.com/bormarek/java.git"
+            steps {
+                echo "get repo"
+                sh "git clone https://github.com/bormarek/java.git"
+            }
+          
         }
         stage('Build'){
             steps {
